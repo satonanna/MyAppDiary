@@ -19,7 +19,7 @@
 </#list>
 <hr>
 <h3>Сделать новую запись</h3>
-<form action="/product/create" method="post">
+<form action="/note/create" method="post">
     Какой сегодня день и дата? <input type="text" name="day"><br></br>
     Какое у меня сегодня настроение? <input type="text" name="mood"><br></br>
     Какие положительные эмоции я сегодня испытал? <input type="text" name="positiveEmotion"><br></br>

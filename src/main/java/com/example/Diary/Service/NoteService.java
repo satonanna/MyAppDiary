@@ -14,10 +14,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class NoteService {
     private final NoteRepository noteRepository;
-        public List<Note>  listNotes(String title) {
-            if (title !=null) noteRepository.findByTitle(title);
-            return noteRepository.findAll();
-        }
+    public List<Note>  listNotes(String title) {
+        if (title !=null) noteRepository.findByTitle(title);
+        return noteRepository.findAll();
+    }
 
     public void saveNote(Note note){
         log.info("Saving new {}", note);
@@ -25,7 +25,7 @@ public class NoteService {
     }
 
     public void deleteNote(Long id){
-            noteRepository.deleteById(id);
+        noteRepository.deleteById(id);
     }
 
     public Note getNoteById(Long id) {

@@ -16,14 +16,14 @@ public class Note {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
-    @Column(name ="day")
+    @Column(name = "day")
     private String day;
-    @Column(name = "mood", columnDefinition = "text")
+    @Column(name = "mood")
     private String mood;
-    @Column(name = "positiveEmotion", columnDefinition = "text")
+    @Column(name = "positiveEmotion")
     private String positiveEmotion;
-    @Column(name = "negativeEmotion", columnDefinition = "text")
+    @Column(name = "negativeEmotion")
     private String negativeEmotion;
-    @Column(name = "bodyPart", columnDefinition = "text")
+    @Column(name = "bodyPart")
     private String bodyPart;
 }
