@@ -6,10 +6,16 @@
 <body>
 <h1>Мой дневник эмоций</h1><hr>
 <h4>Мои записи</h4>
+<form action="/" method="get">
+      Поиск по названию записи: <input type="text" name="title"><br>
+        <input type="submit" value="Поиск"/>
+</form>
 <#list notes as note>
     <div>
         <p><b>${note.day}</b> ${note.mood} | <a href="/note/${note.id}">Подробнее...</a></p>
     </div>
+    <#else>
+    <h3>Записей нет</h3>
 </#list>
 <hr>
 <h3>Сделать новую запись</h3>

@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequiredArgsConstructor
@@ -15,8 +16,8 @@ public class DiaryController {
     private final NoteService noteService;
 
     @GetMapping("/")
-    public  String notes(Model model){
-        model.addAttribute("notes",noteService.listNote());
+    public  String notes(@RequestParam(name = "title", required = false) String title, Model model){
+        model.addAttribute("notes", noteService.listNotes(title));
         return "notes";
     }
 
