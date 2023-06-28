@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 public class Image {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id",length = 65555)
+    @Column(name = "id")
     private Long id;
     @Column(name = "name")
     private String name;
@@ -23,7 +23,7 @@ public class Image {
     private String originalFileName;
     @Column(name = "size")
     private Long size;
-    @Column(name = "contentTyp")
+    @Column(name = "contentType")
     private String contentType;
     @Column(name = "isPreviewImage")
     private boolean isPreviewImage;

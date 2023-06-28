@@ -25,9 +25,9 @@
     Какие положительные эмоции я сегодня испытал? <input type="text" name="positiveEmotion"><br></br>
     Какие негативные эмоции я сегодня испытал? <input type="text" name="negativeEmotion"><br></br>
     В какой части тела у меня были необычные ощущения? <input type="text" name="bodyPart"><br></br>
-    Первое селфи: <input type="file" name="file1"/><br><br>
-    Второе селфи: <input type="file" name="file2"/><br><br>
-    Третье селфи: <input type="file" name="file3"/><br><br>
+    Фото для заметки: <input type="file" name="file1"/><br><br>
+    Фото для заметки: <input type="file" name="file2"/><br><br>
+    Фото для заметки: <input type="file" name="file3"/><br><br>
     <input type="submit" value="Добавить в дневник новую запись"/>
 </form>
 </body>
