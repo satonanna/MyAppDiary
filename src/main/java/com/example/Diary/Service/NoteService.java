@@ -17,25 +17,26 @@ import java.util.List;
 @RequiredArgsConstructor
 public class NoteService {
     private final NoteRepository noteRepository;
+
     public List<Note> listNotes(String day) {
         if (day != null) return noteRepository.findByDay(day);
         return noteRepository.findAll();
     }
 
-    public void saveNote(Note note, MultipartFile file1,MultipartFile file2,MultipartFile file3) throws IOException {
+    public void saveNote(Note note, MultipartFile file1, MultipartFile file2, MultipartFile file3) throws IOException {
         Image image1;
         Image image2;
         Image image3;
-        if (file1.getSize() !=0){
+        if (file1.getSize() != 0) {
             image1 = toImageEntity(file1);
             image1.setPreviewImage(true);
             note.addImageToNote(image1);
         }
-        if (file2.getSize() !=0){
+        if (file2.getSize() != 0) {
             image2 = toImageEntity(file2);
             note.addImageToNote(image2);
         }
-        if (file3.getSize() !=0){
+        if (file3.getSize() != 0) {
             image3 = toImageEntity(file3);
             note.addImageToNote(image3);
         }
@@ -45,6 +46,7 @@ public class NoteService {
         noteRepository.save(note);
     }
 
+
     private Image toImageEntity(MultipartFile file) throws IOException {
         Image image = new Image();
         image.setName(file.getName());
@@ -52,10 +54,15 @@ public class NoteService {
         image.setContentType(file.getContentType());
         image.setSize(file.getSize());
         image.setBytes(file.getBytes());
+        byte[] byteArray = file.getBytes();
+        int size = byteArray.length;
+        System.out.println("Размер массива байтов: " + size + " байт");
         return image;
+
     }
 
-    public void deleteNote(Long id){
+
+    public void deleteNote(Long id) {
         noteRepository.deleteById(id);
     }
 
@@ -63,3 +70,4 @@ public class NoteService {
         return noteRepository.findById(id).orElse(null);
     }
 }
+
