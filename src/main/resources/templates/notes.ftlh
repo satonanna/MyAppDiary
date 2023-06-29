@@ -7,14 +7,14 @@
 <h1>Мой дневник эмоций</h1><hr>
 <h4>Мои записи</h4>
 <form action="/" method="get">
-      Найти мою запись: <input type="text" name="day"><br>
-        <input type="submit" value="Поиск"/>
+    Найти мою запись: <input type="text" name="day"><br>
+    <input type="submit" value="Поиск"/>
 </form>
 <#list notes as note>
     <div>
         <p><b>${note.day}</b> ${note.mood} | <a href="/note/${note.id}">Открыть...</a></p>
     </div>
-    <#else>
+<#else>
     <h3>Записей нет</h3>
 </#list>
 <hr>
@@ -25,7 +25,7 @@
     Какие положительные эмоции я сегодня испытал? <input type="text" name="positiveEmotion"><br></br>
     Какие негативные эмоции я сегодня испытал? <input type="text" name="negativeEmotion"><br></br>
     В какой части тела у меня были необычные ощущения? <input type="text" name="bodyPart"><br></br>
-      <input type="submit" value="Добавить в дневник новую запись"/>
+    <input type="submit" value="Добавить в дневник новую запись"/>
 </form>
 </body>
 </html>

@@ -21,20 +21,24 @@ public class NoteService {
         return noteRepository.findAll();
     }
 
-    public void saveNote(Note note) throws IOException  {
+    public void saveNote(Note note) {
         log.info("Saving new {}", note);
-        noteRepository.save(note);
-        Note productFromDb = noteRepository.save(note);
         noteRepository.save(note);
     }
 
 
     public void deleteNote(Long id) {
         noteRepository.deleteById(id);
+        log.info("Deleted note with ID: {}", id);
     }
 
     public Note getNoteById(Long id) {
-        return noteRepository.findById(id).orElse(null);
+        Note note = noteRepository.findById(id).orElse(null);
+        if (note != null) {
+            log.info("Retrieved note by ID: {}", id);
+        } else {
+            log.info("Note not found for ID: {}", id);
+        }
+        return note;
     }
 }
-

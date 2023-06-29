@@ -12,7 +12,7 @@
 <b>Мои негативные эмоции:</b>${note.negativeEmotion}<br>
 <b>Моя часть тела, в которой были необычные ощущения:</b>${note.bodyPart}<br>
 <hr>
-<form action="/note/delete" ${note.id}method="post">
+<form action="/note/delete/${note.id}" method="post">
     <input type="submit" value="Удалить запись"/>
 </form>
 </body>
