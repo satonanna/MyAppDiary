@@ -1,6 +1,5 @@
 package com.example.Diary.Service;
 
-import com.example.Diary.models.Image;
 import com.example.Diary.models.Note;
 import com.example.Diary.repositories.NoteRepository;
 import lombok.RequiredArgsConstructor;
@@ -9,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -23,42 +21,11 @@ public class NoteService {
         return noteRepository.findAll();
     }
 
-    public void saveNote(Note note, MultipartFile file1, MultipartFile file2, MultipartFile file3) throws IOException {
-        Image image1;
-        Image image2;
-        Image image3;
-        if (file1.getSize() != 0) {
-            image1 = toImageEntity(file1);
-            image1.setPreviewImage(true);
-            note.addImageToNote(image1);
-        }
-        if (file2.getSize() != 0) {
-            image2 = toImageEntity(file2);
-            note.addImageToNote(image2);
-        }
-        if (file3.getSize() != 0) {
-            image3 = toImageEntity(file3);
-            note.addImageToNote(image3);
-        }
-        log.info("Saving new Note. Day: {}; ", note.getDay());
-        Note noteFromDb = noteRepository.save(note);
-        noteFromDb.setPreviewImageId(noteFromDb.getImages().get(0).getId());
+    public void saveNote(Note note) throws IOException  {
+        log.info("Saving new {}", note);
         noteRepository.save(note);
-    }
-
-
-    private Image toImageEntity(MultipartFile file) throws IOException {
-        Image image = new Image();
-        image.setName(file.getName());
-        image.setOriginalFileName(file.getOriginalFilename());
-        image.setContentType(file.getContentType());
-        image.setSize(file.getSize());
-        image.setBytes(file.getBytes());
-        byte[] byteArray = file.getBytes();
-        int size = byteArray.length;
-        System.out.println("Размер массива байтов: " + size + " байт");
-        return image;
-
+        Note productFromDb = noteRepository.save(note);
+        noteRepository.save(note);
     }
 
 

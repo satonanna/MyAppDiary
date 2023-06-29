@@ -29,14 +29,12 @@ public class NoteController {
     public String noteInfo(@PathVariable Long id, Model model) {
         Note note = noteService.getNoteById(id);
         model.addAttribute("note", note);
-        model.addAttribute("images", note.getImages());
-        return "note-info";
+           return "note-info";
     }
 
     @PostMapping("/note/create")
-    public String createNote(@RequestParam("file1") MultipartFile file1, @RequestParam("file2") MultipartFile file2,
-                                @RequestParam("file3") MultipartFile file3, Note note) throws IOException {
-        noteService.saveNote(note, file1, file2, file3);
+    public String createProduct(Note note) throws IOException {
+        noteService.saveNote(note);
         return "redirect:/";
     }
 

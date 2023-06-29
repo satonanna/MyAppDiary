@@ -30,20 +30,4 @@ public class Note {
     private String negativeEmotion;
     @Column(name = "bodyPart")
     private String bodyPart;
-
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,
-    mappedBy = "note")
-    private List<Image> images = new ArrayList<>();
-    private Long previewImageId;
-    private LocalDateTime dateOfCreated;
-
-    @PrePersist
-    private void init(){
-        dateOfCreated = LocalDateTime.now();
-    }
-
-    public void addImageToNote(Image image){
-        image.setNote(this);
-        images.add(image);
-    }
 }
