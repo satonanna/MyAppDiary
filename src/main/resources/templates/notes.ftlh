@@ -1,10 +1,16 @@
+<#ftl>
 <!Doctype html>
 <html>
 <head>
     <title>Мой дневник</title>
 </head>
 <body>
-<h1>Мой дневник эмоций</h1><hr>
+<h1>Мой дневник эмоций | <a href="/login">Войти</a></h1><hr>
+<form action="/logout" method="post">
+    <input type="hidden" name="_csrf" value="${_csrf.token}">
+    <input type="submit" value="Выйти"/>
+</form>
+<hr>
 <h4>Мои записи</h4>
 <form action="/" method="get">
     Найти мою запись: <input type="text" name="day"><br>

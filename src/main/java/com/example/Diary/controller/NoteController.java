@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.io.IOException;
 
 
-
-
 @Controller
 @RequiredArgsConstructor
 public class NoteController {
