@@ -26,4 +26,8 @@ public class UserService {
         userRepository.save(user);
         return true;
     }
-}
+
+    public User findUserByUsernameAndPassword(String username, String password) {
+        return null;
+    }
+    }
