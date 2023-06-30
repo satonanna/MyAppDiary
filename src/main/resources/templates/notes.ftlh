@@ -5,11 +5,7 @@
     <title>Мой дневник</title>
 </head>
 <body>
-<h1>Мой дневник эмоций | <a href="/login">Войти</a></h1><hr>
-<form action="/logout" method="post">
-    <input type="hidden" name="_csrf" value="${_csrf.token}">
-    <input type="submit" value="Выйти"/>
-</form>
+<h1>Мой дневник эмоций
 <hr>
 <h4>Мои записи</h4>
 <form action="/" method="get">
