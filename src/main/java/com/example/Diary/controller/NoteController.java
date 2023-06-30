@@ -1,6 +1,6 @@
 package com.example.Diary.controller;
 
-import com.example.Diary.Service.NoteService;
+import com.example.Diary.services.NoteService;
 import com.example.Diary.models.Note;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

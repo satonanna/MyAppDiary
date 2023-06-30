@@ -1,4 +1,4 @@
-package com.example.Diary.Service;
+package com.example.Diary.services;
 
 
 import com.example.Diary.models.User;

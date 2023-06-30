@@ -1,9 +1,8 @@
-package com.example.Diary.Service;
+package com.example.Diary.services;
 
 import com.example.Diary.models.User;
 import com.example.Diary.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.authentication.UserDetailsRepositoryReactiveAuthenticationManager;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
